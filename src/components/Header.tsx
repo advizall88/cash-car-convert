@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { Phone, Menu, X } from 'lucide-react';
 import {
   NavigationMenu,
@@ -10,10 +11,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -75,7 +76,7 @@ const Header = () => {
             </NavigationMenu>
           </div>
           
-          {/* Phone Call Button */}
+          {/* Phone Call Button - Only on Desktop */}
           <a 
             href="tel:5088164697" 
             className="hidden md:flex items-center gap-2 text-black font-medium rounded-full px-6 py-2.5 transition-all border border-black/10 shadow-sm hover:shadow-md hover:bg-black hover:text-white hover:border-transparent"
@@ -121,7 +122,6 @@ const Header = () => {
               { href: "#home", label: t('nav.home') },
               { href: "#how-it-works", label: t('nav.how') },
               { href: "#why-choose", label: t('nav.why') },
-              { href: "#get-offer", label: t('nav.offer') }
             ].map((item, index) => (
               <React.Fragment key={index}>
                 <a 
@@ -131,31 +131,20 @@ const Header = () => {
                 >
                   {item.label}
                 </a>
-                {index < 3 && <Separator className="my-1 bg-black/5" />}
+                {index < 2 && <Separator className="my-1 bg-black/5" />}
               </React.Fragment>
             ))}
             
-            <div className="mt-8 p-4">
-              <a 
-                href="tel:5088164697" 
-                className="flex items-center justify-center gap-2 text-white font-medium bg-black rounded-full py-3 px-6 shadow-md hover:bg-black/90 transition-colors"
-              >
-                <Phone size={18} />
-                <span>(508) 816-4697</span>
-              </a>
-            </div>
+            {/* We're removing the "Get Your Offer" button from the mobile menu */}
           </nav>
         </div>
       </div>
       
-      {/* Mobile Sticky CTA */}
+      {/* Mobile Sticky CTA - Only showing the blue button and phone button */}
       <div className={`fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_15px_rgba(0,0,0,0.08)] py-3 px-4 flex justify-between z-50 transition-all duration-300 transform ${isScrolled ? 'translate-y-0' : 'translate-y-full'} md:hidden`}>
         <a href="tel:5088164697" className="flex-1 mx-2 bg-black text-white py-3 rounded-lg flex items-center justify-center gap-2 shadow-md transition-transform active:scale-[0.98]">
           <Phone size={18} />
           {t('hero.cta_secondary')}
-        </a>
-        <a href="#get-offer" className="flex-1 mx-2 bg-white border border-black text-black py-3 rounded-lg text-center font-medium shadow-sm transition-transform active:scale-[0.98]">
-          {t('offer_strip.cta')}
         </a>
       </div>
     </header>
