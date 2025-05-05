@@ -52,7 +52,7 @@ const OfferForm = () => {
     setTimeout(() => {
       toast({
         title: "Success!",
-        description: t('form.success'),
+        description: t('form.success') || "Thanks! We're calculating your offer and will text you shortly.",
       });
       setIsSubmitting(false);
       setFormData({
@@ -73,7 +73,7 @@ const OfferForm = () => {
       <div className="max-w-2xl mx-auto">
         <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
           <div className="bg-primary p-6 text-center">
-            <h2 className="text-3xl font-bold text-white">{t('form.title')}</h2>
+            <h2 className="text-3xl font-bold text-white">{t('form.title') || 'Get Your Offer'}</h2>
           </div>
           
           <form onSubmit={handleSubmit} className="p-6 sm:p-8">
@@ -92,7 +92,7 @@ const OfferForm = () => {
                     <Input
                       id="name"
                       name="name"
-                      placeholder={t('form.name_placeholder') || "Enter your name"}
+                      placeholder={t('form.name_placeholder') || "John Anderson"}
                       value={formData.name}
                       onChange={handleChange}
                       className="bg-gray-50 border-gray-200"
@@ -143,11 +143,11 @@ const OfferForm = () => {
                 <h3 className="text-lg font-medium">{t('form.vehicle_info') || 'Vehicle Information'}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="year">{t('form.year_label')}*</Label>
+                    <Label htmlFor="year">{t('form.year_label') || 'Vehicle Year'}*</Label>
                     <Input
                       id="year"
                       name="year"
-                      placeholder={t('form.year_placeholder')}
+                      placeholder={t('form.year_placeholder') || "2015"}
                       value={formData.year}
                       onChange={handleChange}
                       className="bg-gray-50 border-gray-200"
@@ -156,11 +156,11 @@ const OfferForm = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="makeModel">{t('form.make_label')}*</Label>
+                    <Label htmlFor="makeModel">{t('form.make_label') || 'Make & Model'}*</Label>
                     <Input
                       id="makeModel"
                       name="makeModel"
-                      placeholder={t('form.make_placeholder')}
+                      placeholder={t('form.make_placeholder') || "e.g., Honda Civic"}
                       value={formData.makeModel}
                       onChange={handleChange}
                       className="bg-gray-50 border-gray-200"
@@ -171,26 +171,26 @@ const OfferForm = () => {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="condition">{t('form.condition_label')}*</Label>
+                    <Label htmlFor="condition">{t('form.condition_label') || 'Vehicle Condition'}*</Label>
                     <Select onValueChange={handleConditionChange} value={formData.condition}>
                       <SelectTrigger className="bg-gray-50 border-gray-200">
-                        <SelectValue placeholder="Select condition" />
+                        <SelectValue placeholder={t('form.condition_placeholder') || "Select condition"} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="running_drivable">{t('form.condition_opt1')}</SelectItem>
-                        <SelectItem value="running_not_drivable">{t('form.condition_opt2')}</SelectItem>
-                        <SelectItem value="not_running">{t('form.condition_opt3')}</SelectItem>
-                        <SelectItem value="damaged">{t('form.condition_opt4')}</SelectItem>
+                        <SelectItem value="running_drivable">{t('form.condition_opt1') || "Running & Drivable"}</SelectItem>
+                        <SelectItem value="running_not_drivable">{t('form.condition_opt2') || "Running but Not Drivable"}</SelectItem>
+                        <SelectItem value="not_running">{t('form.condition_opt3') || "Not Running"}</SelectItem>
+                        <SelectItem value="damaged">{t('form.condition_opt4') || "Damaged/Wrecked"}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="zip">{t('form.zip_label')}*</Label>
+                    <Label htmlFor="zip">{t('form.zip_label') || 'ZIP Code'}*</Label>
                     <Input
                       id="zip"
                       name="zip"
-                      placeholder={t('form.zip_placeholder')}
+                      placeholder={t('form.zip_placeholder') || "Enter ZIP"}
                       value={formData.zip}
                       onChange={handleChange}
                       className="bg-gray-50 border-gray-200"
@@ -219,7 +219,7 @@ const OfferForm = () => {
               </div>
               
               <div className="text-center text-sm text-gray-500 italic">
-                {t('form.reassurance')}
+                {t('form.reassurance') || "No obligation. We'll text you within 10 minutes."}
               </div>
               
               <Button 
@@ -227,7 +227,7 @@ const OfferForm = () => {
                 className="w-full py-6 text-lg bg-vibrant-blue hover:bg-vibrant-blue/90"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Processing...' : t('form.submit')}
+                {isSubmitting ? 'Processing...' : (t('form.submit') || 'Submit for Instant Offer')}
               </Button>
               
               <div className="text-xs text-center text-gray-500">
@@ -242,3 +242,4 @@ const OfferForm = () => {
 };
 
 export default OfferForm;
+
