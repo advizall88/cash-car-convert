@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
-import { Mail, User, Phone, Note } from 'lucide-react';
+import { Mail, User, Phone, FileText } from 'lucide-react';
 
 const OfferForm = () => {
   const { t } = useLanguage();
@@ -203,7 +203,7 @@ const OfferForm = () => {
                 <div className="space-y-2">
                   <Label htmlFor="note">
                     <div className="flex items-center gap-2">
-                      <Note className="w-4 h-4" />
+                      <FileText className="w-4 h-4" />
                       {t('form.note_label') || 'Additional Notes'}
                     </div>
                   </Label>
