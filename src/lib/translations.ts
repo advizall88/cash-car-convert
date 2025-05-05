@@ -15,8 +15,8 @@ export const translations = {
     },
     'how': {
       'title': 'How It Works',
-      'step1_title': '1. Answer 4 Quick Questions',
-      'step1_desc': 'Tell us about your vehicle: Year, Make/Model, Condition, and ZIP code.',
+      'step1_title': '1. Tell us about your vehicle',
+      'step1_desc': 'Year, Make/Model, Condition, and ZIP code.',
       'step2_title': '2. Get Your Cash Offer',
       'step2_desc': 'Receive your offer in minutes — no obligations, no pressure.',
       'step3_title': '3. We Tow & Pay You Today',
@@ -77,8 +77,8 @@ export const translations = {
     },
     'how': {
       'title': 'Como Funciona',
-      'step1_title': '1. Responda 4 Perguntas Rápidas',
-      'step1_desc': 'Informe sobre seu veículo: Ano, Marca/Modelo, Condição e CEP.',
+      'step1_title': '1. Conte-nos sobre seu veículo',
+      'step1_desc': 'Ano, Marca/Modelo, Condição e CEP.',
       'step2_title': '2. Receba Sua Oferta em Dinheiro',
       'step2_desc': 'Receba sua oferta em minutos — sem obrigações, sem pressão.',
       'step3_title': '3. Rebocamos e Pagamos Hoje',

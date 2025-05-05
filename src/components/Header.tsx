@@ -48,7 +48,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="Lobo's Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-18 w-auto object-contain" /* Increased by 50% from h-12 to h-18 */
               />
             </a>
           </div>
@@ -122,7 +122,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="Lobo's Logo" 
-                className="h-10 w-auto object-contain"
+                className="h-15 w-auto object-contain" /* Increased by 50% from h-10 to h-15 */
               />
             </a>
             <button 
