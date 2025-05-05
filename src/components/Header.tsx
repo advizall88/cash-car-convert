@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const Header = () => {
   const { t } = useLanguage();
@@ -39,7 +40,7 @@ const Header = () => {
         ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2' 
         : 'bg-white/95 backdrop-blur-lg py-4'}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
@@ -97,6 +98,9 @@ const Header = () => {
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
+        
+        {/* Language Switcher positioned below the header */}
+        <LanguageSwitcher />
       </div>
       
       {/* Mobile Menu */}

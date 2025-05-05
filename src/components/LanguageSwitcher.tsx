@@ -7,7 +7,7 @@ const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-1 bg-white/80 backdrop-blur-sm rounded-full px-2 py-1 shadow-md">
+    <div className="absolute top-20 right-4 z-40 flex gap-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 shadow-md transition-all duration-300 hover:shadow-lg">
       <Button
         variant="ghost"
         size="sm"

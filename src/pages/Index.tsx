@@ -2,7 +2,6 @@
 import React from 'react';
 import { LanguageProvider } from '@/context/LanguageContext';
 import Header from '@/components/Header';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -14,7 +13,6 @@ const Index = () => {
   return (
     <LanguageProvider>
       <div className="flex flex-col min-h-screen">
-        <LanguageSwitcher />
         <Header />
         
         <main>
