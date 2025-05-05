@@ -15,7 +15,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="hero-section relative min-h-screen flex items-center pt-20 pb-16 opacity-90">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1573497019236-61f323146b60?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3)', zIndex: -1 }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/lovable-uploads/3d1a231c-58e7-43ec-a13e-c0bba63b79a8.png)', zIndex: -1 }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
       
