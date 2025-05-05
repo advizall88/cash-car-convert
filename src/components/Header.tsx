@@ -42,12 +42,15 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo with link to home */}
           <div className="flex items-center">
-            <h1 className="text-3xl font-bold text-black font-playfair tracking-wide relative">
-              <span className="relative z-10">Lobo's</span>
-              <span className="absolute -bottom-1 left-0 w-full h-2 bg-black/5 rounded-full"></span>
-            </h1>
+            <a href="#home" className="block">
+              <img 
+                src="/logo.png" 
+                alt="Lobo's Logo" 
+                className="h-12 w-auto object-contain"
+              />
+            </a>
           </div>
           
           {/* Desktop Navigation Menu */}
@@ -115,7 +118,13 @@ const Header = () => {
           }`}
         >
           <div className="flex justify-between items-center p-4 border-b">
-            <h1 className="text-2xl font-bold text-black font-playfair">Lobo's</h1>
+            <a href="#home" onClick={toggleMobileMenu}>
+              <img 
+                src="/logo.png" 
+                alt="Lobo's Logo" 
+                className="h-10 w-auto object-contain"
+              />
+            </a>
             <button 
               onClick={toggleMobileMenu}
               className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5"
