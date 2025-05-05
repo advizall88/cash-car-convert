@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -6,13 +7,13 @@ import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuL
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+
 const Header = () => {
-  const {
-    t
-  } = useLanguage();
+  const { t } = useLanguage();
   const isMobile = useIsMobile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -21,20 +22,25 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-  return <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 
       ${isScrolled ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-1' : 'bg-white/95 backdrop-blur-lg py-2'}`}>
-      <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-3 relative"> {/* Further reduced horizontal padding */}
+      <div className="max-w-7xl mx-auto px-0 sm:px-1 lg:px-2 relative"> {/* Reduced padding even more */}
         <div className="flex justify-between items-center">
-          {/* Logo with link to home */}
-          <div className="flex items-center">
+          {/* Logo with link to home - significantly increased size and adjusted container */}
+          <div className="flex items-center pl-1">
             <a href="#home" className="block">
-              <img src="/logo.png" alt="Lobo's Logo" /* Increased size significantly (almost double) */
-            style={{
-              maxHeight: '28px'
-            }} /* Force specific size */ className="h-28 w-auto object-fill" />
+              <img 
+                src="/logo.png" 
+                alt="Lobo's Logo" 
+                className="w-auto object-contain" 
+                style={{ height: '50px' }} /* Significantly increased fixed height */
+              />
             </a>
           </div>
           
@@ -42,23 +48,28 @@ const Header = () => {
           <div className="hidden md:block">
             <NavigationMenu>
               <NavigationMenuList className="flex gap-3">
-                {[{
-                href: "#home",
-                label: t('nav.home')
-              }, {
-                href: "#how-it-works",
-                label: t('nav.how')
-              }, {
-                href: "#why-choose",
-                label: t('nav.why')
-              }, {
-                href: "#get-offer",
-                label: t('nav.offer')
-              }].map((item, index) => <NavigationMenuItem key={index}>
-                    <NavigationMenuLink href={item.href} className={cn("inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-medium text-black", "bg-white border border-black/10 rounded-xl shadow-sm", "transition-all duration-200", "hover:shadow-md hover:translate-y-[-2px] hover:bg-black/5", "active:translate-y-[1px] active:shadow-inner active:bg-black/10", "focus:outline-none focus:ring-2 focus:ring-black/20 focus:ring-offset-1")}>
+                {[
+                  {href: "#home", label: t('nav.home')}, 
+                  {href: "#how-it-works", label: t('nav.how')}, 
+                  {href: "#why-choose", label: t('nav.why')}, 
+                  {href: "#get-offer", label: t('nav.offer')}
+                ].map((item, index) => (
+                  <NavigationMenuItem key={index}>
+                    <NavigationMenuLink 
+                      href={item.href} 
+                      className={cn(
+                        "inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-medium text-black",
+                        "bg-white border border-black/10 rounded-xl shadow-sm",
+                        "transition-all duration-200",
+                        "hover:shadow-md hover:translate-y-[-2px] hover:bg-black/5",
+                        "active:translate-y-[1px] active:shadow-inner active:bg-black/10",
+                        "focus:outline-none focus:ring-2 focus:ring-black/20 focus:ring-offset-1"
+                      )}
+                    >
                       {item.label}
                     </NavigationMenuLink>
-                  </NavigationMenuItem>)}
+                  </NavigationMenuItem>
+                ))}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -70,7 +81,11 @@ const Header = () => {
           </a>
           
           {/* Mobile Menu Button */}
-          <button className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/5 text-black hover:bg-black/10 transition-colors" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+          <button 
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-black/5 text-black hover:bg-black/10 transition-colors mr-1" 
+            onClick={toggleMobileMenu} 
+            aria-label="Toggle mobile menu"
+          >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -84,9 +99,12 @@ const Header = () => {
         <div className={`bg-white h-full w-[80%] max-w-sm shadow-2xl transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex justify-between items-center p-4 border-b">
             <a href="#home" onClick={toggleMobileMenu}>
-              <img src="/logo.png" alt="Lobo's Logo" className="h-24 w-auto object-contain" style={{
-              maxHeight: '24px'
-            }} /* Force specific size */ />
+              <img 
+                src="/logo.png" 
+                alt="Lobo's Logo" 
+                className="w-auto object-contain" 
+                style={{ height: '45px' }} /* Increased size in mobile menu too */
+              />
             </a>
             <button onClick={toggleMobileMenu} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5">
               <X size={20} />
@@ -94,23 +112,22 @@ const Header = () => {
           </div>
           
           <nav className="flex flex-col p-4">
-            {[{
-            href: "#home",
-            label: t('nav.home')
-          }, {
-            href: "#how-it-works",
-            label: t('nav.how')
-          }, {
-            href: "#why-choose",
-            label: t('nav.why')
-          }].map((item, index) => <React.Fragment key={index}>
-                <a href={item.href} className="py-3 px-4 text-black font-medium bg-white border border-black/10 rounded-xl shadow-sm my-1 hover:shadow-md hover:bg-black/5 hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-inner transition-all" onClick={toggleMobileMenu}>
+            {[
+              {href: "#home", label: t('nav.home')}, 
+              {href: "#how-it-works", label: t('nav.how')}, 
+              {href: "#why-choose", label: t('nav.why')}
+            ].map((item, index) => (
+              <React.Fragment key={index}>
+                <a 
+                  href={item.href} 
+                  className="py-3 px-4 text-black font-medium bg-white border border-black/10 rounded-xl shadow-sm my-1 hover:shadow-md hover:bg-black/5 hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-inner transition-all" 
+                  onClick={toggleMobileMenu}
+                >
                   {item.label}
                 </a>
                 {index < 2 && <Separator className="my-2 bg-black/5" />}
-              </React.Fragment>)}
-            
-            {/* We're removing the "Get Your Offer" button from the mobile menu */}
+              </React.Fragment>
+            ))}
           </nav>
         </div>
       </div>
@@ -122,6 +139,8 @@ const Header = () => {
           {t('hero.cta_secondary')}
         </a>
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
