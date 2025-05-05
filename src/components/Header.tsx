@@ -48,7 +48,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="Lobo's Logo" 
-                className="h-18 w-auto object-contain" /* Reduced by 20% from h-18 to h-14 */
+                className="h-15 w-auto object-contain" /* Reduced by 20% from h-18 to h-14 */
               />
             </a>
           </div>
