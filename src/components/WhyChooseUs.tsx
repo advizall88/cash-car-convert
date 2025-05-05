@@ -1,44 +1,20 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { TruckIcon, DollarSign, Shield, FileQuestion } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const { t } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
   
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.why-card');
-    elements.forEach(el => {
-      el.classList.add('animate-on-scroll');
-      observer.observe(el);
-    });
-
-    return () => {
-      elements.forEach(el => observer.unobserve(el));
-    };
-  }, []);
-
   return (
-    <section id="why-choose" ref={sectionRef} className="section-container bg-gray-50">
+    <section id="why-choose" className="section-container bg-gray-50">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-2">{t('why.title')}</h2>
         <div className="w-20 h-1 bg-secondary mx-auto"></div>
       </div>
       
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="why-card bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
           <div className="flex-shrink-0 w-12 h-12 bg-vibrant-blue text-white rounded-full flex items-center justify-center">
             <TruckIcon size={24} />
           </div>
@@ -48,7 +24,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
         
-        <div className="why-card bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
           <div className="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center">
             <DollarSign size={24} />
           </div>
@@ -58,7 +34,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
         
-        <div className="why-card bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
           <div className="flex-shrink-0 w-12 h-12 bg-vibrant-purple text-white rounded-full flex items-center justify-center">
             <Shield size={24} />
           </div>
@@ -68,7 +44,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
         
-        <div className="why-card bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white rounded-lg p-6 flex items-start gap-5 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
           <div className="flex-shrink-0 w-12 h-12 bg-vibrant-red text-white rounded-full flex items-center justify-center">
             <FileQuestion size={24} />
           </div>
