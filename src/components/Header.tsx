@@ -30,16 +30,15 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 
       ${isScrolled ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-1' : 'bg-white/95 backdrop-blur-lg py-2'}`}>
-      <div className="max-w-7xl mx-auto px-0 sm:px-1 lg:px-2 relative"> {/* Reduced padding even more */}
+      <div className="max-w-7xl mx-auto px-0 sm:px-1 lg:px-2 relative">
         <div className="flex justify-between items-center">
-          {/* Logo with link to home - significantly increased size and adjusted container */}
-          <div className="flex items-center pl-1">
+          {/* Logo with link to home - placed outside normal constraints */}
+          <div className="flex items-center pl-0">
             <a href="#home" className="block">
               <img 
                 src="/logo.png" 
                 alt="Lobo's Logo" 
-                className="w-auto object-contain" 
-                style={{ height: '50px' }} /* Significantly increased fixed height */
+                className="w-auto h-16 md:h-20" 
               />
             </a>
           </div>
@@ -102,8 +101,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="Lobo's Logo" 
-                className="w-auto object-contain" 
-                style={{ height: '45px' }} /* Increased size in mobile menu too */
+                className="w-auto h-14" 
               />
             </a>
             <button onClick={toggleMobileMenu} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5">
