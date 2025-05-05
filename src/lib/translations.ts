@@ -25,13 +25,13 @@ export const translations = {
     'why': {
       'title': 'Why Choose Lobo\'s',
       'reason1_title': 'Free Towing',
-      'reason1_desc': 'We'll pick up your car at no cost to you, anywhere in our service area.',
+      'reason1_desc': "We'll pick up your car at no cost to you, anywhere in our service area.",
       'reason2_title': 'Highest Cash Offers',
       'reason2_desc': 'We consistently beat competitor prices. Get the most for your vehicle.',
       'reason3_title': 'Licensed & Insured',
-      'reason3_desc': 'We're properly licensed and fully insured for your protection.',
+      'reason3_desc': "We're properly licensed and fully insured for your protection.",
       'reason4_title': 'No Title? No Problem',
-      'reason4_desc': 'Missing paperwork? We'll guide you through alternative options.',
+      'reason4_desc': "Missing paperwork? We'll guide you through alternative options.",
     },
     'offer_strip': {
       'title': 'Ready for cash? It starts with 4 questions.',
@@ -50,9 +50,9 @@ export const translations = {
       'condition_opt4': 'Damaged/Wrecked',
       'zip_label': 'ZIP Code',
       'zip_placeholder': 'Enter ZIP',
-      'reassurance': 'No obligation. We'll text you within 10 minutes.',
+      'reassurance': "No obligation. We'll text you within 10 minutes.",
       'submit': 'Submit for Instant Offer',
-      'success': 'Thanks! We're calculating your offer and will text you shortly.'
+      'success': "Thanks! We're calculating your offer and will text you shortly."
     },
     'footer': {
       'tagline': 'Cash in your pocket, car gone today.',
