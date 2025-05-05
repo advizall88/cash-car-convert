@@ -15,7 +15,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="hero-section relative min-h-screen flex items-center pt-20 pb-16 opacity-90">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/lovable-uploads/0161c96e-7884-48c1-9e5d-99ebf8daa1e7.png)', zIndex: -1 }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/tow.png)', zIndex: -1 }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
       
