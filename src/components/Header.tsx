@@ -52,7 +52,7 @@ const Header = () => {
           {/* Desktop Navigation Menu */}
           <div className="hidden md:block">
             <NavigationMenu>
-              <NavigationMenuList className="flex gap-6">
+              <NavigationMenuList className="flex gap-3">
                 {[
                   { href: "#home", label: t('nav.home') },
                   { href: "#how-it-works", label: t('nav.how') },
@@ -63,9 +63,12 @@ const Header = () => {
                     <NavigationMenuLink 
                       href={item.href}
                       className={cn(
-                        "group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors text-black hover:text-black relative focus:outline-none",
-                        "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300",
-                        "hover:after:scale-x-100 hover:after:origin-bottom-left"
+                        "inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-medium text-black",
+                        "bg-white border border-black/10 rounded-xl shadow-sm",
+                        "transition-all duration-200",
+                        "hover:shadow-md hover:translate-y-[-2px] hover:bg-black/5",
+                        "active:translate-y-[1px] active:shadow-inner active:bg-black/10",
+                        "focus:outline-none focus:ring-2 focus:ring-black/20 focus:ring-offset-1"
                       )}
                     >
                       {item.label}
@@ -79,7 +82,7 @@ const Header = () => {
           {/* Phone Call Button - Only on Desktop */}
           <a 
             href="tel:5088164697" 
-            className="hidden md:flex items-center gap-2 text-black font-medium rounded-full px-6 py-2.5 transition-all border border-black/10 shadow-sm hover:shadow-md hover:bg-black hover:text-white hover:border-transparent"
+            className="hidden md:flex items-center gap-2 text-black font-medium rounded-full px-6 py-2.5 transition-all border border-black/10 shadow-sm hover:shadow-md hover:bg-black hover:text-white hover:border-transparent hover:translate-y-[-2px] active:translate-y-[1px]"
           >
             <Phone size={18} strokeWidth={2} />
             <span>(508) 816-4697</span>
@@ -126,12 +129,12 @@ const Header = () => {
               <React.Fragment key={index}>
                 <a 
                   href={item.href} 
-                  className="py-4 px-4 text-black font-medium hover:bg-black/5 rounded-lg transition-colors" 
+                  className="py-3 px-4 text-black font-medium bg-white border border-black/10 rounded-xl shadow-sm my-1 hover:shadow-md hover:bg-black/5 hover:translate-y-[-1px] active:translate-y-[1px] active:shadow-inner transition-all" 
                   onClick={toggleMobileMenu}
                 >
                   {item.label}
                 </a>
-                {index < 2 && <Separator className="my-1 bg-black/5" />}
+                {index < 2 && <Separator className="my-2 bg-black/5" />}
               </React.Fragment>
             ))}
             
