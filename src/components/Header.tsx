@@ -37,10 +37,10 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 
       ${isScrolled 
-        ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2' 
-        : 'bg-white/95 backdrop-blur-lg py-3'}`} /* Reduced top/bottom padding */
+        ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-1' 
+        : 'bg-white/95 backdrop-blur-lg py-2'}`} /* Reduced vertical padding */
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 relative"> {/* Reduced horizontal padding */}
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4 relative"> {/* Further reduced horizontal padding */}
         <div className="flex justify-between items-center">
           {/* Logo with link to home */}
           <div className="flex items-center">
@@ -48,7 +48,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="Lobo's Logo" 
-                className="h-14 w-auto object-contain" /* Reduced by 20% from h-18 to h-14 */
+                className="h-16 w-auto object-contain" /* Increased size from h-14 to h-16 */
               />
             </a>
           </div>
@@ -122,7 +122,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="Lobo's Logo" 
-                className="h-12 w-auto object-contain" /* Reduced by 20% from h-15 to h-12 */
+                className="h-14 w-auto object-contain" /* Increased size from h-12 to h-14 */
               />
             </a>
             <button 
