@@ -1,4 +1,3 @@
-
 export const translations = {
   'en': {
     'nav': {
@@ -8,7 +7,7 @@ export const translations = {
       'offer': 'Get Your Offer'
     },
     'hero': {
-      'title': 'Sell Your Junk Car for Cash — We Pick Up Today.',
+      'title': 'Sell Your Used Car for Cash — We Pick Up Today.',
       'subtitle': 'Free towing • Any condition • Same-day payment',
       'cta_primary': 'Find Out How Much We Pay',
       'cta_secondary': 'Call (508) 816-4697'
@@ -82,7 +81,7 @@ export const translations = {
       'offer': 'Receba Uma Oferta'
     },
     'hero': {
-      'title': 'Venda Seu Carro Velho Por Dinheiro — Removemos Hoje.',
+      'title': 'Venda Seu Carro Usado Por Dinheiro — Removemos Hoje.',
       'subtitle': 'Reboque grátis • Qualquer condição • Pagamento no mesmo dia',
       'cta_primary': 'Descubra Quanto Pagamos',
       'cta_secondary': 'Ligue (508) 816-4697'
